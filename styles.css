@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: burlywood;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    gap: 5px;
+}
+
+.card {
+    display: flex;
+    min-height: 75px;
+    flex: 1;
+    background-color: rgb(184, 182, 182);
+    padding: 15px;
+    gap: 5px;
+}
+
+#popupForm {
+    display: none;
+}
