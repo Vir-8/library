@@ -19,8 +19,8 @@ function closeForm() {
 }
 
 function submitForm(e) {
-    newCard = document.createElement('div');
-    newCard.setAttribute('class', 'card');
+
+    newCard = createCard();
     mainContainer.append(newCard);
 
     title = document.querySelector("#title").value;
@@ -38,10 +38,32 @@ function submitForm(e) {
     book = new Book (title, author, pages, read);
     myLibrary.push(book);
 
-    newCard.textContent = book.info();
+    textBox.textContent = book.info();
 
     document.getElementById("popupForm").style.display = "none";
     e.preventDefault();
+}
+
+function createCard()
+{
+    newCard = document.createElement('div');
+    newCard.setAttribute('class', 'card');
+
+    textBox = document.createElement('p');
+    newCard.append(textBox);
+
+    deleteButton = document.createElement('button');
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener('click', deleteCard);
+    newCard.append(deleteButton);
+
+    return newCard;
+}
+
+function deleteCard()
+{
+    const div = this.parentNode;
+    div.remove();
 }
 
 function Book(title, author, pages, read)
@@ -78,9 +100,8 @@ function addBookToLibrary(book) {
 
 for (let i = 0; i < myLibrary.length; i++)
 {
-    newCard = document.createElement('div');
-    newCard.setAttribute('class', 'card');
-    newCard.textContent = myLibrary[i].info();
+    newCard = createCard();
+    textBox.textContent = myLibrary[i].info();
 
     mainContainer.append(newCard);
 }

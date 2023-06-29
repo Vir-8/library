@@ -16,46 +16,44 @@
     <div class="mainContainer">
         <button id="newBook">NEW BOOK</button>
 
-        <div id="popupForm">
-            <form action="" method="post">
+        <form action="" method="post" id="popupForm">
 
-                <div class="header">Let's start! <button id="cancel">close</button></div>
+            <div class="header">Let's start!</div>
     
-                <div class="elementContainer">
+            <div class="elementContainer">
                     
-                    <div class="formRow">
+                <div class="formRow">
                         
-                        <div class="formElement">
-                            <label for="title">Book</label>
-                            <input type="text" id="title" placeholder="def..." name="title" minlength="2" maxlength="20" required>
-                        </div>
-
-                        <div class="formElement">
-                            <label for="author">Author</label>
-                            <input type="text" id="author" placeholder="abc..." name="author" minlength="2" maxlength="20" required>
-                        </div>
-
-                        <div class="formElement">
-                            <label for="pages">Pages</label>
-                            
-                            <input type="number" id="pages" placeholder="1234" name="pages" minlength="2" maxlength="20" min="0" 
-                            onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
-                            required>
-                        </div>
-
-                        <div class="formElement">
-                            <label for="status">Read</label>
-                            <input type="checkbox" name="status" id="status">
-                        </div>
+                    <div class="formElement">
+                        <label for="title">Book</label>
+                        <input type="text" id="title" placeholder="def..." name="title" minlength="2" maxlength="20" required>
                     </div>
-    
+
+                    <div class="formElement">
+                        <label for="author">Author</label>
+                        <input type="text" id="author" placeholder="abc..." name="author" minlength="2" maxlength="20" required>
+                    </div>
+
+                    <div class="formElement">
+                        <label for="pages">Pages</label>
+                            
+                        <input type="number" id="pages" placeholder="1234" name="pages" minlength="2" maxlength="20" min="0" 
+                        onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"
+                        required>
+                    </div>
+
+                    <div class="formElement">
+                        <label for="status">Read</label>
+                        <input type="checkbox" name="status" id="status">
+                    </div>
                 </div>
     
-                <button type="submit" id="submitForm">Add boooook</button>
-                
-                <div class="login">Already have an account? <a href="">Log in</a> </div>
-            </form>
-        </div>
+            </div>
+    
+            <button type="submit" id="submitForm">Add boooook</button>
+            <button id="cancel">close</button>
+            <div class="login">Already have an account? <a href="">Log in</a> </div>
+        </form>
 
     </div>
 </body>
